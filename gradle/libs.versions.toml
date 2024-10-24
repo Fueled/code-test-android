@@ -11,8 +11,6 @@ activityCompose = "1.9.2"
 composeBom = "2024.09.01"
 
 coilVersion = "2.6.0"
-hiltVersion = "2.51.1"
-hiltNavigationVersion = "1.2.0"
 kspVersion = "2.0.20-1.0.25"
 appcompat = "1.7.0"
 material = "1.12.0"
@@ -74,10 +72,6 @@ retrofit = {module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitV
 retrofit-moshi-converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofitVersion" }
 okhttp3-logging = {module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttp3LoggingVersion"}
 
-#// Hilt DI
-androidx-hilt = { group = "com.google.dagger", name = "hilt-android", version.ref = "hiltVersion" }
-androidx-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion" }
-androidx-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationVersion" }
 
 #// kotlinx Serialization
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
@@ -88,5 +82,4 @@ jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = 
 
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
-hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }
 compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }

@@ -12,12 +12,12 @@ import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import androidx.hilt.navigation.compose.hiltViewModel
+import com.fueled.technicalchallenge.di.AppModule
 import com.fueled.technicalchallenge.presentation.character_list.components.CharacterCard
 
 @Composable
 internal fun CharacterListScreen(
-    viewModel: CharacterListViewModel = hiltViewModel()
+    viewModel: CharacterListViewModel = AppModule.characterListViewModel
 ) {
     val state = viewModel.state.value
     Box(modifier = Modifier.fillMaxSize()) {

@@ -7,17 +7,12 @@ import androidx.lifecycle.viewModelScope
 import com.fueled.technicalchallenge.data.ApiUtils
 import com.fueled.technicalchallenge.data.CharactersApi
 import com.fueled.technicalchallenge.data.model.CharacterApiModel
-import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
-import javax.inject.Inject
 
-@HiltViewModel
-class CharacterListViewModel @Inject constructor(
-    private val api: CharactersApi,
-) : ViewModel() {
+class CharacterListViewModel(private val api: CharactersApi) : ViewModel() {
 
     private val _state = mutableStateOf(CharacterListState())
     val state: State<CharacterListState> = _state

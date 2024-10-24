@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
     alias(libs.plugins.android.ksp)
-    alias(libs.plugins.hilt.android)
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.compose.compiler)
 }
@@ -69,9 +68,6 @@ dependencies {
     implementation(libs.material)
     implementation(libs.androidx.activity)
 
-    implementation(libs.androidx.hilt)
-    implementation(libs.androidx.hilt.navigation)
-    ksp(libs.androidx.hilt.compiler)
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -87,6 +83,5 @@ dependencies {
     implementation(libs.moshi.core)
     ksp(libs.moshi.codegen)
     implementation(libs.okhttp3.logging )
-    implementation(libs.androidx.hilt)
     implementation(libs.accompanist.flowlayout)
 }
