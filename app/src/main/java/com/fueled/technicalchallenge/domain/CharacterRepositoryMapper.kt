@@ -28,9 +28,6 @@ internal fun CharacterApiModel.toEntity() = Character(
     description,
     thumbnail.toEntity(),
     resourceURI,
-    comics.toEntity(),
-    series.toEntity(),
-    stories.toEntity(),
     events.toEntity(),
     urls.map { it.toEntity() },
 )

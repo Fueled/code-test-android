@@ -20,12 +20,13 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import coil.compose.rememberAsyncImagePainter
+import com.fueled.technicalchallenge.data.model.CharacterApiModel
 import com.fueled.technicalchallenge.domain.model.Character
 
 @Composable
 internal fun CharacterCard(
     modifier: Modifier = Modifier,
-    data: Character,
+    data: CharacterApiModel,
 ) {
     Card(
         modifier = modifier
@@ -42,7 +43,7 @@ internal fun CharacterCard(
         ) {
             Image(
                 modifier = Modifier.fillMaxSize(),
-                painter = rememberAsyncImagePainter(data.thumbnail.defaultUrl),
+                painter = rememberAsyncImagePainter(data.defaultImageUrl),
                 contentDescription = "Character Image",
                 alignment = Alignment.Center,
                 contentScale = ContentScale.Crop,

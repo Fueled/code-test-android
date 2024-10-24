@@ -1,5 +1,6 @@
 package com.fueled.technicalchallenge.data.model
 
+import com.fueled.technicalchallenge.domain.model.ImageVariant
 import com.squareup.moshi.JsonClass
 
 /**
@@ -12,9 +13,17 @@ data class CharacterApiModel(
     val description: String,
     val thumbnail: ImageApiModel,
     val resourceURI: String,
-    val comics: ResourceItemsApiModel,
-    val series: ResourceItemsApiModel,
-    val stories: ResourceItemsApiModel,
     val events: ResourceItemsApiModel,
     val urls: List<UrlApiModel>,
-)
+){
+    val defaultImageUrl = "${thumbnail.path}/${ImageVariant.PORTRAIT_INCREDIBLE.pathValue}.${thumbnail.extension}"
+        .formatUrl()
+}
+
+private fun String.formatUrl(): String {
+    return when {
+        startsWith("https") -> this
+        startsWith("http") -> replace("http", "https")
+        else -> "https://$this"
+    }
+}

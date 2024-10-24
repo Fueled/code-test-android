@@ -9,7 +9,7 @@ espressoCore = "3.6.1"
 lifecycleRuntimeKtx = "2.8.5"
 activityCompose = "1.9.2"
 composeBom = "2024.09.01"
-#ktorVersion = "2.3.12"
+
 coilVersion = "2.6.0"
 hiltVersion = "2.51.1"
 hiltNavigationVersion = "1.2.0"
@@ -19,12 +19,10 @@ material = "1.12.0"
 activity = "1.9.2"
 navVersion = "2.8.0"
 serialization = "1.7.1"
-datastore = "1.1.1"
-coroutine = "1.8.0"
-composeVersion = "1.7.1"
+
 retrofitVersion = "2.9.0"
 okHttp3LoggingVersion = "5.0.0-alpha.2"
-junitKtx = "1.2.1"
+
 moshi = "1.15.1"
 
 ## this is override version replaced for default version number
@@ -65,13 +63,7 @@ material = { group = "com.google.android.material", name = "material", version.r
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 #// Coil Image Loading
 coil-image-loading = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
-#// ktor Network Client
-#ktor-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorVersion" }
-#ktor-client-http = { group = "io.ktor", name = "ktor-client-okhttp", version.ref = "ktorVersion" }
-#ktor-auth = { module = "io.ktor:ktor-client-auth", version.ref = "ktorVersion" }
-#ktor-client-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorVersion" }
-#ktor-serialization-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorVersion" }
-#ktor-client-logging = { group = "io.ktor", name = "ktor-client-logging", version.ref = "ktorVersion" }
+
 #// Retrofit2
 #// Retrofit - A type-safe HTTP client for Android and Java
 moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
@@ -87,20 +79,13 @@ androidx-hilt = { group = "com.google.dagger", name = "hilt-android", version.re
 androidx-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hiltVersion" }
 androidx-hilt-navigation = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNavigationVersion" }
 
-#// Datastore
-datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
 #// kotlinx Serialization
 kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
-#// Kotlinx Coroutine
-kotlinx-coroutine = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutine" }
-#// compose runtime
-compose-runtime = { module = "androidx.compose.runtime:runtime", version.ref = "composeVersion" }
-androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junitKtx" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
-android-library = { id = "com.android.library", version.ref = "agp" }
+
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 android-ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
 hilt-android = { id = "com.google.dagger.hilt.android", version.ref = "hiltVersion" }

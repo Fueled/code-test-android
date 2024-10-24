@@ -12,9 +12,6 @@ data class Character(
     val description: String,
     val thumbnail: Image,
     val resourceURI: String,
-    val comics: ResourceItems,
-    val series: ResourceItems,
-    val stories: ResourceItems,
     val events: ResourceItems,
     val urls: List<Url>,
 )
