@@ -10,6 +10,8 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
+import androidx.compose.runtime.getValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.fueled.technicalchallenge.di.AppModule
@@ -19,7 +21,7 @@ import com.fueled.technicalchallenge.presentation.character_list.components.Char
 internal fun CharacterListScreen(
     viewModel: CharacterListViewModel = AppModule.characterListViewModel
 ) {
-    val state = viewModel.state.value
+    val state by viewModel.state.collectAsState()
     Box(modifier = Modifier.fillMaxSize()) {
         Column(
             modifier = Modifier

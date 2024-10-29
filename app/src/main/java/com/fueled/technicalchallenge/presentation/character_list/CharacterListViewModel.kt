@@ -1,40 +1,35 @@
 package com.fueled.technicalchallenge.presentation.character_list
 
-import androidx.compose.runtime.State
-import androidx.compose.runtime.mutableStateOf
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.fueled.technicalchallenge.data.ApiUtils
 import com.fueled.technicalchallenge.data.CharactersApi
 import com.fueled.technicalchallenge.data.model.CharacterApiModel
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.launchIn
-import kotlinx.coroutines.flow.onEach
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.launch
 
 class CharacterListViewModel(private val api: CharactersApi) : ViewModel() {
 
-    private val _state = mutableStateOf(CharacterListState())
-    val state: State<CharacterListState> = _state
+    private val _state = MutableStateFlow(CharacterListState())
+    val state: StateFlow<CharacterListState> = _state
 
     init {
         getCharacters()
     }
 
     private fun getCharacters(query: String? = null) {
-        fetchCharacters().onEach { result ->
-            _state.value =
-                CharacterListState(characters = result)
-        }.launchIn(viewModelScope)
+        viewModelScope.launch {
+            val result = fetchCharacters()
+            _state.value = CharacterListState(characters = result)
+        }
     }
 
-    private fun fetchCharacters(nameQuery: String? = null): Flow<List<CharacterApiModel>> = flow {
-        emit(
-            api.getCharacters(
-                ts = ApiUtils.currentTimestamp,
-                hash = ApiUtils.hash,
-                heroNameQuery = nameQuery
-            ).results
-        )
-    }
+    private suspend fun fetchCharacters(nameQuery: String? = null): List<CharacterApiModel> =
+        api.getCharacters(
+            ts = ApiUtils.currentTimestamp,
+            hash = ApiUtils.hash,
+            heroNameQuery = nameQuery
+        ).results
+
 }

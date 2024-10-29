@@ -1,5 +1,7 @@
 package com.fueled.technicalchallenge.data
 
+import com.fueled.technicalchallenge.data.ApiConstants.PRIVATE_KEY
+import com.fueled.technicalchallenge.data.ApiConstants.PUBLIC_KEY
 import java.nio.charset.StandardCharsets
 import java.security.MessageDigest
 
@@ -11,7 +13,7 @@ object ApiUtils {
     val currentTimestamp: String = System.currentTimeMillis().toString()
 
     val hash: String by lazy {
-        val input = currentTimestamp + "36f9f6a342c3c8d1d230033cb12ea57505a53478" + "b90b08ed09de1bfffedb245e6cd7e0ea"
+        val input = currentTimestamp + PRIVATE_KEY + PUBLIC_KEY
         md5(input)
     }
 

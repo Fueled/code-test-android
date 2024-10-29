@@ -6,11 +6,6 @@ package com.fueled.technicalchallenge.data
 object ApiConstants {
 
     const val BASE_URL = "https://gateway.marvel.com/v1/public/"
-
-    object Headers {
-        const val ts = "ts"
-        const val hash = "hash"
-        const val apiKey = "apikey"
-        const val query = "nameStartsWith"
-    }
+    const val PRIVATE_KEY = "56d849c34c1d3cb33b2e72e671b0c630bf44f9ce" // TODO remove keys
+    const val PUBLIC_KEY = "d7129e1c18f76c72ba0a76adfe118758" // TODO remove keys
 }

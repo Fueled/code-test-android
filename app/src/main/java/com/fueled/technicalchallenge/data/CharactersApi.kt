@@ -1,5 +1,6 @@
 package com.fueled.technicalchallenge.data
 
+import com.fueled.technicalchallenge.data.ApiConstants.PUBLIC_KEY
 import com.fueled.technicalchallenge.data.model.CharacterApiModel
 import com.fueled.technicalchallenge.data.model.PageApiModel
 import retrofit2.http.GET
@@ -13,8 +14,8 @@ interface CharactersApi {
     suspend fun getCharacters(
         @Query("ts") ts: String,
         @Query("hash") hash: String,
-        @Query("apikey") apiKey: String = "b90b08ed09de1bfffedb245e6cd7e0ea",
-        @Query(ApiConstants.Headers.query) heroNameQuery: String?,
+        @Query("apikey") apiKey: String = PUBLIC_KEY,
+        @Query("nameStartsWith") heroNameQuery: String?,
     ): PageApiModel<CharacterApiModel>
 
 }
