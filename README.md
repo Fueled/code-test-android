@@ -7,15 +7,15 @@ Show us what you'd like to do to make the codebase functional and efficient agai
 ## Requirements
 - You will need to connect to the live Marvel API to fetch data. You'll need credentials to be able to access the API, so you need to create a (free) account on the [Marvel Developer Portal](https://developer.marvel.com/) to get them. Once you get your public and private keys, update the constants in `ApiConstants.kt` with your keys and you should be good to go!
 - If you use some AI help along the way, you must cite your query and leave a comment along with the solution code you used.
-- Spend no more than 4-6 hours on this exercise. It's more about the quality of your work than the quanity!
-- Add a simple detail screen to display details of a selected character
+- Spend no more than 4-6 hours on this exercise. It's more about the quality of your work than the quantity!
+- Add a detail screen to display details of a selected character
 - Bonus points for adding tests for the business logic
 
 ## Completion
 When you've finished, please include a short note with your response, explaining:
 - What were your priorities, and why?
-- If you had another two days, what would you have liked to tackled next?
+- If you had another two days, what would you have tackled next?
 - What would you change about the structure of the code?
 - What bugs did you find but not fix?
 - What would you change about the visual design of the app?
-- Approximately how long you spent on this project
+- How long did you spend on this project(approximately)?
