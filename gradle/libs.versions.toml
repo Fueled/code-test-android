@@ -1,0 +1,87 @@
+[versions]
+accompanistFlowlayout = "0.17.0"
+agp = "8.4.2"
+kotlin = "2.0.20"
+coreKtx = "1.13.1"
+junit = "4.13.2"
+junitVersion = "1.2.1"
+espressoCore = "3.6.1"
+lifecycleRuntimeKtx = "2.8.5"
+activityCompose = "1.9.2"
+composeBom = "2024.09.01"
+
+coilVersion = "2.6.0"
+kspVersion = "2.0.20-1.0.25"
+appcompat = "1.7.0"
+material = "1.12.0"
+activity = "1.9.2"
+navVersion = "2.8.0"
+serialization = "1.7.1"
+
+retrofitVersion = "2.9.0"
+okHttp3LoggingVersion = "5.0.0-alpha.2"
+
+moshi = "1.15.1"
+
+mockk = "1.13.13"
+coroutines = "1.9.0"
+
+
+[libraries]
+#// Android Ktx
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+
+#// Appcompat Activity
+androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-activity = { group = "androidx.activity", name = "activity", version.ref = "activity" }
+
+#// Jetpack Compose activity
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+#// Jetpack Compose
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+accompanist-flowlayout = { module = "com.google.accompanist:accompanist-flowlayout", version.ref = "accompanistFlowlayout" }
+
+#// Jetpack Compose Navigation Support
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navVersion" }
+
+#// Material
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+#// Material3
+androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+#// Coil Image Loading
+coil-image-loading = { group = "io.coil-kt", name = "coil-compose", version.ref = "coilVersion" }
+
+#// Retrofit2
+#// Retrofit - A type-safe HTTP client for Android and Java
+moshi-core = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+
+retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofitVersion" }
+#// Square’s great HTTP client for the JVM, Android, and GraalVM.
+retrofit-moshi-converter = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofitVersion" }
+okhttp3-logging = { module = "com.squareup.okhttp3:logging-interceptor", version.ref = "okHttp3LoggingVersion" }
+
+
+#// kotlinx Serialization
+kotlinx-serialization-json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "serialization" }
+
+mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
+android-ksp = { id = "com.google.devtools.ksp", version.ref = "kspVersion" }
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
